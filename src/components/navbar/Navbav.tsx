@@ -3,14 +3,16 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import UserAccountnav from "./UserAccountnav"
+import Image from 'next/image';
+
 export const Navbar = async () => {
-    
+
   const session = await getServerSession (authOptions)
     return(
         <nav className=" text-black p-4 sm:p-6 md:flex md:justify-between md:items-center">
             <div className="container mx-auto flex justify-between item-center">
                 <a href="" className="text-2xl" font-bold>
-                    <img src="/LOGONHK.jpg" width="115px" height="60px"/>
+                    <Image src="/LOGONHK.jpg" alt="LOGONHK image" width={115}  height={60} />
                 </a>
                 <div className="hidden md:flex">
                 <Link href="/" className="mx-2 btn btn-active btn-neutral ">

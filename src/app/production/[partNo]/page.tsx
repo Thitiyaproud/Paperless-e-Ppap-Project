@@ -125,7 +125,7 @@ const Partnodetails = ({ params }: { params: { partNo: string } }) => {
 
         {NHKsPD && (
           <>
-            <label> NHK's Parts Drawing : </label>
+            <label> NHK&apos;s Parts Drawing : </label>
             <a href={NHKsPD} className="link link-primary block text-lg font-medium bg-base-100 rounded-md mb-2 p-1">{NHKsPD}</a>
           </>
         )}

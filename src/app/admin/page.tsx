@@ -2,6 +2,7 @@ import React from 'react';
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import UserData from "@/components/admin/Admin";
+import Image from 'next/image';
 
 const AdminPage = async () => {
   const session = await getServerSession (authOptions)
@@ -23,7 +24,7 @@ const AdminPage = async () => {
           <div className="hero">
             <div className="hero-content flex flex-col items-center justify-center relative">
               <div className="relative">
-                <img src="warning.svg" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                <Image src="warning.svg" alt="warning image of admin page" width={600}  height={600} className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 <p className="absolute bottom-0 right-0 text-sm font-light mr-2 mb-2">
                   Designed by <a rel="noopener noreferrer" href="https://www.freepik.com" className="text-blue-500 underline">Freepik.com</a>
                 </p>

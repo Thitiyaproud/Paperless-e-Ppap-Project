@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
               <div className="relative">
-                <img src="1.jpg" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />      
+                <Image src="/1.jpg" alt="Image of home page" width={500}  height={500} className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />      
                 <p className="absolute bottom-0 right-0 text-sm font-light mr-2 mb-2">
                   Designed by <a rel="noopener noreferrer" href="https://www.freepik.com" className="text-blue-500 underline">Freepik.com</a>
                 </p>

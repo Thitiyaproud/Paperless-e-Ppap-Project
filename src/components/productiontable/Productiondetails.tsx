@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
 
-export default function productiondetails() {
+export default function Productiondetails() {
   const [Production, setProduction] = useState([])
 
   const fetchProduction = async () => {
@@ -46,7 +46,7 @@ export default function productiondetails() {
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Part No.</th>
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Supplier Contact Directory</th>
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Advance Products Quality Planning (APQP)</th>
-              <th scope="col" className="py-3 px-6 whitespace-nowrap">NHK's Parts Drawing</th>
+              <th scope="col" className="py-3 px-6 whitespace-nowrap">NHK&apos;s Parts Drawing</th>
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Engineering Change/Process Change Request</th>
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Design Failure Mode and Effects Analysis (DFMEA)</th>
               <th scope="col" className="py-3 px-6 whitespace-nowrap">Process Flow Diagram</th>
