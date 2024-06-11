@@ -11,7 +11,7 @@ export const Navbar = async () => {
     return(
         <nav className=" text-black p-4 sm:p-6 md:flex md:justify-between md:items-center">
             <div className="container mx-auto flex justify-between item-center">
-                <a href="" className="text-2xl" font-bold>
+                <a href="" className="text-2xl font-bold">
                     <Image src="/LOGONHK.jpg" alt="LOGONHK image" width={115}  height={60} />
                 </a>
                 <div className="hidden md:flex">

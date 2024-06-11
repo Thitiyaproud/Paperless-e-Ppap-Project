@@ -1,7 +1,5 @@
-//https://next-auth.js.org/providers/credentials
-
 import { PrismaClient } from '@prisma/client';
-import { NextAuthOptions } from 'next-auth';
+import { NextAuthOptions, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { compare } from 'bcrypt';
@@ -24,13 +22,15 @@ export const authOptions: NextAuthOptions = {
         email: { label: 'Email', type: 'email', placeholder: 'suzuka@mail.com' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) {
           return null;
         }
+        
         const existingUser = await prisma.user.findUnique({
           where: { email: credentials.email },
         });
+        
         if (!existingUser) {
           return null;
         }
@@ -42,10 +42,10 @@ export const authOptions: NextAuthOptions = {
 
         return {
           id: `${existingUser.id}`,
-          username: `${existingUser.username}`,
-          email: `${existingUser.email}`,
+          username: existingUser.username,
+          email: existingUser.email,
           role: existingUser.role,
-        };
+        } as User;
       },
     }),
   ],
