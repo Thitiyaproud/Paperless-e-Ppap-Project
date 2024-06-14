@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import UserAccountnav from "./UserAccountnav"
@@ -14,26 +13,40 @@ export const Navbar = async () => {
                 <a href="" className="text-2xl font-bold">
                     <Image src="/LOGONHK.jpg" alt="LOGONHK image" width={115}  height={60} />
                 </a>
-                <div className="hidden md:flex">
-                <Link href="/" className="mx-2 btn btn-active btn-neutral ">
-                    Home
-                </Link>
-                <Link href="/supplier" className="mx-2 btn btn-active btn-neutral">
-                    Supplier
-                </Link>
-                <Link href="/production" className="mx-2 btn btn-outline">
-                    Production
-                </Link>
-                <Link href="/admin" className="mx-2 btn btn-outline ">
-                    Admin
-                </Link>
 
+                <div className="hidden md:flex">
+                <ul className="md:flex md:items-center">
+                 <li className="mx4">
+                    <a href="/" className="mx-2 btn btn-active btn-neutral ">
+                    Home
+                     </a>
+                 </li >
+
+                 <li className="mx4">
+                 <a href="/supplier" className="mx-2 btn btn-active btn-neutral">
+                    Supplier
+                </a>
+                </li >
+
+                <li className="mx4">
+                <a href="/production" className="mx-2 btn btn-outline">
+                    Production
+                </a>
+                </li>
+
+                <li className="mx4">
+                <a href="/admin" className="mx-2 btn btn-outline ">
+                    Admin
+                </a>
+                </li>
+
+                </ul>
                 {session?.user ? (
                     <UserAccountnav/>
                 ) : (
-                    <Link className="btn btn-success  text-white" href="/signin">
+                    <a className="btn btn-success  text-white" href="/signin">
                     Sign In
-                    </Link>
+                    </a>
                 )}
 
                 </div>
